@@ -1,4 +1,4 @@
-import { IListItem } from './item';
+import { IListItem } from './item.model';
 
 export const availableItems: IListItem[] = [
     {

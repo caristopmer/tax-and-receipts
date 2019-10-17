@@ -4,8 +4,14 @@
 
   <div class="available-items-list">
     <div *ngFor="let item of availableItems" class="available-item">
-      <button>button</button> {{item.name}} {{item.price}}
+      <button (click)="selectionMade(item)">Select</button> {{item.name}} {{item.price}}
     </div>
+  </div>
+  
+  <button (click)="resetSelections()">Reset</button>
+
+  <div *ngFor="let item of selectedItemsList$ | async">
+    {{item.name}}
   </div>
 
 </div>

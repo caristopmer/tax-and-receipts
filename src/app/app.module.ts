@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import { receiptReducer } from './reducers/receipt.reducer';
+import { ReceiptReducer } from './store/reducers/receipt.reducer';
 
 import { AppComponent } from './app.component';
 
@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ receipt: receiptReducer})
+    StoreModule.forRoot({ receipt: ReceiptReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
