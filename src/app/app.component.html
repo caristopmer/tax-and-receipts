@@ -2,16 +2,26 @@
 <div class="app-container">
   <h2>Sales Tax Calculator</h2>
 
+  <div class="basket-options">
+    <button (click)="prefillBasketOne()">Basket 1</button>
+    <button (click)="prefillBasketTwo()">Basket 2</button>
+    <button (click)="prefillBasketThree()">Basket 3</button>
+  </div>  
+
   <div class="available-items-list">
     <div *ngFor="let item of availableItems" class="available-item">
-      <button (click)="selectionMade(item)">Select</button> {{item.name}} {{item.price}}
+      <button (click)="selectionMade(item)">Select</button>
+      <span class="item-name">{{item.name}}</span>
+      <span class="item-price">{{item.price | currency}}</span> 
     </div>
   </div>
-  
-  <button (click)="resetSelections()">Reset</button>
 
-  <div *ngFor="let item of selectedItemsList$ | async">
-    {{item.name}}
+  <button (click)="resetSelections()">Reset Selection</button>
+
+  <h3>Selected Items:</h3>
+  <div *ngFor="let item of selectedItemsList$ | async" class="selected-item">
+    <span class="item-name">{{item.name}}</span>
+    <span class="item-price">{{item.price | currency}}</span>
   </div>
 
 </div>

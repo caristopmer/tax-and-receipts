@@ -5,8 +5,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    .basket-options button{
+        margin: 0 1rem 1rem 1rem;
+    }
 
-    .available-item {
-        width: 30rem;
+    .available-item, .selected-item {
+        width: 26rem;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: .5rem;
+        text-align: left;
+
+        button {
+            width: 15%;
+            margin-right: .5rem;
+        }
+
+        .item-name {
+            width: 75%;
+        }
+
+        .item-price {
+            width: 14%;
+        }
+    }
+
+    h3 {
+        margin: 1rem 0 0 0;
+    }
+
+    .selected-item{
+        justify-content: space-between;
     }
 }

@@ -27,8 +27,11 @@ export class AppComponent implements OnInit {
     return availableItems;
   }
 
+  ngOnInit() {
+    this.store.select(store => store.receipt);
+  }
+
   selectionMade(selection: IListItem) {
-    console.log(selection);
     this.store.dispatch(new ReceiptActions.SelectAction(selection));
   }
 
@@ -36,10 +39,21 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new ReceiptActions.ResetAction());
   }
 
-  ngOnInit() {
-    this.store.select(store => store.receipt);
-    // this.selectedItemsList$.subscribe( (yep) => {
-    //   this.theList = yep;
-    // });
+  prefillBasketOne() {
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[0]));
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[1]));
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[2]));
+  }
+
+  prefillBasketTwo() {
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[3]));
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[4]));
+  }
+
+  prefillBasketThree() {
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[5]));
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[6]));
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[7]));
+    this.store.dispatch(new ReceiptActions.SelectAction(availableItems[8]));
   }
 }
