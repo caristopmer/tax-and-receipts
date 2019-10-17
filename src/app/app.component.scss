@@ -1,0 +1,12 @@
+
+
+.app-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .available-item {
+        width: 30rem;
+    }
+}
