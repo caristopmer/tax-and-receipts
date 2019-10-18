@@ -20,9 +20,19 @@
 
   <h3>Selected Items:</h3>
   <div *ngFor="let item of selectedItemsList$ | async" class="selected-item">
-    <span class="item-name">{{item.name}}</span>
-    <span class="item-price">{{item.price | currency}}</span>
+    <span class="item-name">{{item.name}}:</span>
+    <span class="item-price">{{checkoutPrice(item) | currency}}</span>
   </div>
+  <div *ngIf="checkedOut" class="selected-item">
+    <span class="item-name">Sales Taxes:</span>
+    <span class="item-price">{{totalTaxes | currency}}</span>
+  </div>
+  <div *ngIf="checkedOut" class="selected-item">
+    <span class="item-name">Total:</span>
+    <span class="item-price">{{finalTotal | currency}}</span>
+  </div>
+
+  <button *ngIf="!checkedOut" (click)="checkout()">Checkout</button>
 
 </div>
 
