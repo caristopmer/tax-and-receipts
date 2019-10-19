@@ -1,7 +1,6 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { TaxCalculatorHelper } from './services/tax-calculator/tax-calculator.helper';
-
 import { Store } from '@ngrx/store';
 import { TestStore } from './testing/test-store';
 import { IListItem } from './store/models/item.model';
