@@ -1,27 +1,11 @@
-# TaxAndReceipts
+# Sales Tax Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.10.
+This is a simple application to allow a user to select items to purchase from a list and check out. The user is displayed a summary of the items they purchased, their price including any applicible taxes, as well as the total sales tax and total price of their selections.
 
-## Development server
+## Running the Application
+This app is an Angular project. Assuming you have installed the Angular CLI on your machine, the app can be run locally using `ng serve`. Navigate to `http://localhost:4200/` to view and use the application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Notes
+Future improvements include:
+ - A more thoroughly itemized receipt to provide greater detail.
+ - A better system for selecting item quantities, instead of using set amounts.
