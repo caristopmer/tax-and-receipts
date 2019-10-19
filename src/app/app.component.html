@@ -18,7 +18,7 @@
 
   <button (click)="resetSelections()">Reset Selection</button>
 
-  <h3>Selected Items:</h3>
+  <h3>{{checkedOut ? 'Purchased' : 'Selected'}} Items:</h3>
   <div *ngFor="let item of selectedItemsList$ | async" class="selected-item">
     <span class="item-name">{{item.name}}:</span>
     <span class="item-price">{{checkoutPrice(item) | currency}}</span>
@@ -33,7 +33,4 @@
   </div>
 
   <button *ngIf="!checkedOut" (click)="checkout()">Checkout</button>
-
 </div>
-
-

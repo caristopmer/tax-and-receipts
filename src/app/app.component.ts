@@ -15,11 +15,11 @@ import { TaxCalculatorHelper } from './services/tax-calculator/tax-calculator.he
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   selectedItemsList$: Observable<Array<IListItem>>;
   checkedOut = false;
-  totalSalesTax: number;
-  totalPrice: number;
+  totalSalesTax: number = null;
+  totalPrice: number = null;
 
   constructor(
     private store: Store<AppState>,
@@ -38,10 +38,6 @@ export class AppComponent implements OnInit {
 
   get finalTotal() {
     return this.taxHelper.computeTotalPrice();
-  }
-
-  ngOnInit() {
-    this.store.select(store => store.receipt);
   }
 
   selectionMade(selection: IListItem) {
