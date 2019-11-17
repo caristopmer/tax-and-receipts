@@ -55,6 +55,14 @@ export class AppComponent {
   }
 
   /**
+   * Removes an item from the Store of the user's selections.
+   * @param selection The item unselected.
+   */
+  selectionRemoved(selection: IListItem) {
+    this.store.dispatch(new ReceiptActions.RemoveAction(selection));
+  }
+
+  /**
    * Clears the store of the user's selected items and resets component variables.
    */
   resetSelections() {

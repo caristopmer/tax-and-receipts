@@ -20,6 +20,7 @@
 
   <h3>{{checkedOut ? 'Purchased' : 'Selected'}} Items:</h3>
   <div *ngFor="let item of selectedItemsList$ | async" class="selected-item">
+    <button (click)="selectionRemoved(item)">Remove</button>
     <span class="item-name">{{item.name}}:</span>
     <span class="item-price">{{checkoutPrice(item) | currency}}</span>
   </div>

@@ -10,6 +10,8 @@ export function ReceiptReducer(state: Array<IListItem> = defaultState, action: R
   switch (action.type) {
     case ReceiptActionTypes.SELECT:
       return [...state, action.payload];
+    case ReceiptActionTypes.REMOVE:
+      return state.filter( item => item !== action.payload);
     case ReceiptActionTypes.RESET:
       return defaultState;
     default:
